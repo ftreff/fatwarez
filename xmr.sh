@@ -46,7 +46,7 @@ if [ -e xmr.addr ]; then
   echo "xmr.addy exists!, Loading XMR Address..."
   # Load variables from the file
   xmr=$(cat xmr.addr)
-  # Use the loaded variables
+  # Use the loaded variable
   echo ""
   echo -e "\033[0;32mXMR Address Loaded!"
   echo -e "\033[0m$xmr\033[0;32m"
@@ -55,7 +55,7 @@ else
   #state error
   echo ""
   echo -e "\033[0;31mxmr.addy does not exist!"
-  echo -e "No XMR address is saved!\033[0m"
+  echo -e "XMR address is NOT saved!\033[0m"
   sleep .1
 fi
 #
@@ -65,6 +65,7 @@ echo ""
 echo -e "\033[0;32mEnter your XMR Wallet Address for the mining pool, and press enter: \033[0m"
 read -e -p "--->  " -t 30 -i $xmr xmraddress
 sleep .1
+echo $xmraddress
 echo -e "\033[1;32mYou entered: $xmraddress\033[0m"
 sleep .1
 #save miner name
